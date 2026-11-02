@@ -9,8 +9,7 @@
 <title>FISHORA · Global Fishing Intelligence</title>
 <link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="icon-192.png">
 <link rel="stylesheet" href="styles.css">
-<!-- Online map library only; the entire non-map interface operates without it. -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoaDQnxKrNJOZQ=" crossorigin="anonymous">
+<!-- Leaflet is loaded only on demand in the Atlas, never during initial app startup. -->
 </head>
 <body>
 <div class="app-shell" id="app">
@@ -29,7 +28,7 @@
   <button data-page="organizer" class="nav-item"><span class="nav-icon">▤</span> Organisateur</button>
   <button data-page="settings" class="nav-item"><span class="nav-icon">⚙</span> Réglages & données</button>
  </nav>
- <div class="sidebar-footer"><div class="compass-graphic">✦<span>Le monde est ton terrain de pêche.</span></div><div class="aside-pill">◉ Gratuit · Personnel · Local-first</div><small>FISHORA V2.0 · 36 décisions</small></div>
+ <div class="sidebar-footer"><div class="compass-graphic">✦<span>Le monde est ton terrain de pêche.</span></div><div class="aside-pill">◉ Gratuit · Personnel · Local-first</div><small>FISHORA V2.1 · 36 décisions</small></div>
 </aside>
 <div class="workspace">
  <header class="topbar"><div class="top-breadcrumb"><span class="eyebrow">COPILOTE DE PÊCHE</span><span class="top-divider"></span><span id="topDate">—</span></div><div class="top-right"><span id="onlineBadge" class="status-badge">◉ Vérification</span><button class="icon-btn" id="btnSync" aria-label="Actualiser les données">↻</button><button class="avatar" data-page="settings" aria-label="Réglages">F</button></div></header>
@@ -40,7 +39,6 @@
 <div id="toasts" role="status" aria-live="polite"></div>
 <div id="modalHost"></div>
 <script defer src="data.js"></script>
-<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
 <script defer src="app.js"></script>
 </body>
 </html>
